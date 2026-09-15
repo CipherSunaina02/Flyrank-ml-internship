@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Google Search Ranking & Discoverability Capstone</title>
+
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        line-height: 1.7;
+        color: #202124;
+        background: #f6f8fb;
+    }
+
+    .container {
+        max-width: 1050px;
+        margin: auto;
+        padding: 40px 22px 70px;
+    }
+
+    .hero {
+        background: #ffffff;
+        padding: 55px 45px;
+        border-radius: 18px;
+        margin-bottom: 25px;
+        border: 1px solid #e1e5ea;
+    }
+
+    .tag {
+        display: inline-block;
+        padding: 6px 12px;
+        border-radius: 20px;
+        background: #eef2ff;
+        font-size: 13px;
+        font-weight: bold;
+        margin-right: 6px;
+        margin-bottom: 8px;
+    }
+
+    h1 {
+        font-size: 42px;
+        line-height: 1.15;
+        margin: 18px 0;
+    }
+
+    h2 {
+        font-size: 28px;
+        margin-top: 0;
+        padding-bottom: 10px;
+        border-bottom: 2px solid #e7eaf0;
+    }
+
+    h3 {
+        margin-top: 28px;
+    }
+
+    section {
+        background: #ffffff;
+        padding: 35px 40px;
+        border-radius: 16px;
+        margin-bottom: 24px;
+        border: 1px solid #e1e5ea;
+    }
+
+    .subtitle {
+        color: #5f6368;
+        font-size: 18px;
+    }
+
+    .highlight {
+        padding: 20px;
+        background: #f1f5f9;
+        border-left: 5px solid #334155;
+        border-radius: 8px;
+        margin: 20px 0;
+    }
+
+    .warning {
+        padding: 18px;
+        background: #fff7ed;
+        border-left: 5px solid #ea580c;
+        border-radius: 8px;
+        margin: 20px 0;
+    }
+
+    .success {
+        padding: 18px;
+        background: #f0fdf4;
+        border-left: 5px solid #16a34a;
+        border-radius: 8px;
+        margin: 20px 0;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 22px 0;
+        font-size: 15px;
+    }
+
+    th, td {
+        padding: 13px 14px;
+        border-bottom: 1px solid #e5e7eb;
+        text-align: left;
+    }
+
+    th {
+        background: #f8fafc;
+        font-weight: bold;
+    }
+
+    .metric-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+        gap: 15px;
+        margin: 25px 0;
+    }
+
+    .metric {
+        background: #f8fafc;
+        padding: 22px;
+        border-radius: 12px;
+        border: 1px solid #e5e7eb;
+    }
+
+    .metric-number {
+        font-size: 29px;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    .metric-label {
+        color: #64748b;
+        font-size: 14px;
+    }
+
+    .bar-chart {
+        margin: 25px 0;
+    }
+
+    .bar-row {
+        display: grid;
+        grid-template-columns: 210px 1fr 80px;
+        align-items: center;
+        gap: 12px;
+        margin: 13px 0;
+    }
+
+    .bar-track {
+        height: 28px;
+        background: #e5e7eb;
+        border-radius: 6px;
+        overflow: hidden;
+    }
+
+    .bar {
+        height: 100%;
+        background: #475569;
+        border-radius: 6px;
+    }
+
+    .bar-value {
+        font-weight: bold;
+    }
+
+    .action {
+        font-weight: bold;
+    }
+
+    a {
+        color: #2563eb;
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    footer {
+        text-align: center;
+        color: #64748b;
+        padding: 25px 0;
+        font-size: 14px;
+    }
+
+    code {
+        background: #f1f5f9;
+        padding: 2px 5px;
+        border-radius: 4px;
+    }
+
+    @media (max-width: 700px) {
+        h1 {
+            font-size: 31px;
+        }
+
+        section,
+        .hero {
+            padding: 25px 20px;
+        }
+
+        .bar-row {
+            grid-template-columns: 1fr;
+            gap: 5px;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- HERO -->
+<div class="hero">
+
+    <span class="tag">Capstone</span>
+    <span class="tag">Machine Learning</span>
+    <span class="tag">Content Opportunity Scoring</span>
+
+    <h1>
+        Google Search Ranking &amp; Discoverability Capstone
+    </h1>
+
+    <p class="subtitle">
+        A leakage-aware machine learning workflow for ranking content
+        that may need human review for possible performance decline.
+    </p>
+
+    <div class="highlight">
+        <strong>Research question:</strong><br>
+        Can February 2026 content-performance signals be used to identify
+        and rank content that may need review for possible decline in
+        March 2026?
+    </div>
+
+    <p>
+        <strong>Decision supported:</strong>
+        Which content should a human SEO or content reviewer inspect first?
+    </p>
+
+</div>
+
+
+<!-- 1. TITLE + ABSTRACT -->
+<section id="abstract">
+
+<h2>1. Title + Abstract</h2>
+
+<h3>Abstract</h3>
+
+<p>
+This study asks whether February 2026 content-performance signals can be
+used to rank content for possible performance-decline review in March 2026.
+A Logistic Regression model was trained using February-only performance
+features and evaluated with a client-grouped 80/20 validation split so that
+test clients were unseen during training. The study-specific decline label
+was defined as March clicks being lower than February clicks, while March
+data was used only for outcome construction and not as a model feature.
+On the grouped test set, the Logistic Regression model achieved 0.8782
+accuracy compared with 0.8794 for the majority-class baseline. The result
+is therefore treated as a directional decision-support experiment for
+prioritizing human review rather than evidence that the model guarantees
+future decline or predicts Google's ranking algorithm.
+</p>
+
+</section>
+
+
+<!-- 2. INTRODUCTION -->
+<section id="introduction">
+
+<h2>2. Introduction / Problem Statement</h2>
+
+<p>
+Content teams often have more pages to review than they can manually
+inspect. A useful machine learning workflow can help organize that review
+by ranking content according to measurable historical performance signals.
+</p>
+
+<p>
+This project focuses on a specific operational decision:
+</p>
+
+<div class="highlight">
+    <strong>
+        Which content should a human SEO or content reviewer inspect first?
+    </strong>
+</div>
+
+<p>
+The analysis uses February 2026 performance information to construct a
+ranking signal for a March 2026 decline-review task. The objective is not
+automatic publishing, deletion, redirection, or a claim about Google's
+internal ranking system.
+</p>
+
+<p>
+The final output is a ranked review queue containing a model score,
+reason codes, and a suggested human-review action.
+</p>
+
+</section>
+
+
+<!-- 3. DATA -->
+<section id="data">
+
+<h2>3. Data</h2>
+
+<p>
+The analysis uses the FlyRank internship warehouse release and the
+<code>fact_content_daily_performance</code> table.
+</p>
+
+<h3>Data grain</h3>
+
+<p>
+One warehouse row represents a daily observation at the
+<strong>client × content × report-date</strong> level.
+The daily data was aggregated to client × content level for modeling.
+</p>
+
+<h3>Date windows</h3>
+
+<div class="metric-grid">
+
+    <div class="metric">
+        <div class="metric-number">Feb 2026</div>
+        <div class="metric-label">Feature window</div>
+    </div>
+
+    <div class="metric">
+        <div class="metric-number">Mar 2026</div>
+        <div class="metric-label">Outcome window</div>
+    </div>
+
+    <div class="metric">
+        <div class="metric-number">303,572</div>
+        <div class="metric-label">Joined modeling rows</div>
+    </div>
+
+    <div class="metric">
+        <div class="metric-number">50</div>
+        <div class="metric-label">Clients in modeling population</div>
+    </div>
+
+</div>
+
+<h3>February feature window</h3>
+
+<p>
+The model uses historical February signals including:
+</p>
+
+<ul>
+    <li>GSC impressions</li>
+    <li>GSC clicks</li>
+    <li>Average position</li>
+    <li>GA4 pageviews</li>
+    <li>GA4 sessions</li>
+    <li>GA4 users</li>
+    <li>GA4 engaged sessions</li>
+    <li>Total engagement seconds</li>
+    <li>Organic sessions</li>
+    <li>AI sessions</li>
+</ul>
+
+<h3>March outcome</h3>
+
+<p>
+The study-specific decline label is:
+</p>
+
+<div class="highlight">
+    <strong>
+        decline = 1 if March clicks &lt; February clicks;
+        otherwise decline = 0.
+    </strong>
+</div>
+
+<p>
+March outcome information was used only to construct the label.
+It was excluded from the final feature vector.
+</p>
+
+<h3>Exclusions and public-safety controls</h3>
+
+<ul>
+    <li>Future March outcome variables were excluded from model features.</li>
+    <li>Label-derived fields were excluded.</li>
+    <li>Decision-derived flags were excluded from the model.</li>
+    <li>Client names, domains, URLs, private queries, credentials, and raw exports were not published.</li>
+    <li>Rows without a measurable March outcome were excluded from the modeling population.</li>
+</ul>
+
+<div class="success">
+    <strong>Data audit: PASSED.</strong>
+    The final public-facing analysis uses public-safe aggregate information
+    and pseudonymous identifiers only where required for grouping and joining.
+</div>
+
+</section>
+
+
+<!-- 4. METHODOLOGY -->
+<section id="methodology">
+
+<h2>4. Methodology</h2>
+
+<h3>Feature construction</h3>
+
+<p>
+February performance variables were aggregated from the daily warehouse
+records to one client-content modeling row.
+</p>
+
+<h3>Model</h3>
+
+<p>
+A Logistic Regression classifier was trained using standardized
+February-only features.
+</p>
+
+<h3>Baseline</h3>
+
+<p>
+The baseline predicts the majority class in the validation set.
+This provides a simple reference point against which the model can be
+evaluated.
+</p>
+
+<h3>Validation design</h3>
+
+<p>
+The primary evaluation uses a client-grouped 80/20 split. Forty clients
+were used for training and ten previously unseen clients were used for
+testing.
+</p>
+
+<table>
+    <thead>
+        <tr>
+            <th>Validation component</th>
+            <th>Measured value</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Training rows</td>
+            <td>264,134</td>
+        </tr>
+        <tr>
+            <td>Testing rows</td>
+            <td>39,438</td>
+        </tr>
+        <tr>
+            <td>Training clients</td>
+            <td>40</td>
+        </tr>
+        <tr>
+            <td>Testing clients</td>
+            <td>10</td>
+        </tr>
+        <tr>
+            <td>Client overlap</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>Test decline base rate</td>
+            <td>0.1206</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3>Leakage checks</h3>
+
+<p>
+The final feature vector contains no March outcome variables, no
+future-derived fields, and no decision-derived flags.
+</p>
+
+<p>
+A deliberate leakage experiment added March clicks to the feature vector.
+That intentionally contaminated model achieved approximately 0.9998
+accuracy, demonstrating that future outcome information could create an
+artificially strong result.
+</p>
+
+<div class="warning">
+    <strong>Leakage decision:</strong>
+    March clicks were deliberately excluded from the production feature
+    vector. The 0.9998 leakage result is not treated as a valid model result.
+</div>
+
+<div class="success">
+    <strong>Methodology audit: PASSED.</strong>
+</div>
+
+</section>
+
+
+<!-- 5. RESULTS -->
+<section id="results">
+
+<h2>5. Results</h2>
+
+<p>
+The primary result is evaluated on the same client-grouped test split for
+both the model and the majority-class baseline.
+</p>
+
+<table>
+    <thead>
+        <tr>
+            <th>Method</th>
+            <th>Validation design</th>
+            <th>Accuracy</th>
+            <th>Decline base rate</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td>Majority-class baseline</td>
+            <td>Client-grouped 80/20</td>
+            <td><strong>0.8794</strong></td>
+            <td>0.1206</td>
+        </tr>
+
+        <tr>
+            <td>Logistic Regression</td>
+            <td>Client-grouped 80/20</td>
+            <td><strong>0.8782</strong></td>
+            <td>0.1206</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3>Model vs baseline</h3>
+
+<div class="bar-chart">
+
+    <div class="bar-row">
+        <div>Majority baseline</div>
+        <div class="bar-track">
+            <div class="bar" style="width:87.94%;"></div>
+        </div>
+        <div class="bar-value">87.94%</div>
+    </div>
+
+    <div class="bar-row">
+        <div>Logistic Regression</div>
+        <div class="bar-track">
+            <div class="bar" style="width:87.82%;"></div>
+        </div>
+        <div class="bar-value">87.82%</div>
+    </div>
+
+</div>
+
+<p>
+The grouped model accuracy is <strong>0.0012 lower</strong> than the
+majority-class baseline on this test split.
+</p>
+
+<div class="highlight">
+    <strong>Measured result:</strong>
+    The Logistic Regression model does not outperform the grouped
+    majority baseline on accuracy.
+</div>
+
+<h3>Why the validation design matters</h3>
+
+<p>
+An earlier row-based split produced a Logistic Regression accuracy of
+<strong>0.9627</strong>. The client-grouped result fell to
+<strong>0.8782</strong>, while keeping test clients completely unseen
+during training.
+</p>
+
+<p>
+This difference suggests that the row-based result may have been
+optimistic because observations from the same clients could appear on both
+sides of the split.
+</p>
+
+<p>
+The grouped result is therefore used as the primary and more conservative
+evaluation for this capstone.
+</p>
+
+</section>
+
+
+<!-- 6. LIMITATIONS -->
+<section id="limitations">
+
+<h2>6. Limitations &amp; Honest Framing</h2>
+
+<ol>
+    <li>
+        <strong>Study-specific label:</strong>
+        Decline is defined specifically as March clicks being lower than
+        February clicks. It is not a universal definition of content decay.
+    </li>
+
+    <li>
+        <strong>Model does not beat the grouped baseline:</strong>
+        The Logistic Regression accuracy of 0.8782 is slightly below the
+        majority baseline of 0.8794.
+    </li>
+
+    <li>
+        <strong>Row-split performance was optimistic:</strong>
+        The 0.9627 row-split accuracy should not be treated as the primary
+        generalization estimate.
+    </li>
+
+    <li>
+        <strong>Observational analysis:</strong>
+        The results show measured associations in this dataset and do not
+        establish that a particular content change causes improved search
+        performance.
+    </li>
+
+    <li>
+        <strong>Single feature/outcome window:</strong>
+        February-to-March analysis provides a limited temporal view and
+        may not generalize to other periods.
+    </li>
+
+    <li>
+        <strong>Feature coverage:</strong>
+        The model uses a defined set of performance features and does not
+        represent every possible content or search signal.
+    </li>
+
+    <li>
+        <strong>Human review is required:</strong>
+        The ranked queue is a prioritization aid, not an automated
+        publishing system.
+    </li>
+
+    <li>
+        <strong>No Google algorithm claim:</strong>
+        The analysis does not predict Google's ranking algorithm and does
+        not claim that refreshing a page will cause a ranking improvement.
+    </li>
+</ol>
+
+<div class="warning">
+    <strong>Honest framing:</strong>
+    The output should be interpreted as measured, directional,
+    decision-support information for prioritizing content review.
+</div>
+
+</section>
+
+
+<!-- 7. RANKED RECOMMENDATIONS -->
+<section id="recommendations">
+
+<h2>7. Ranked Recommendations</h2>
+
+<p>
+The final action engine ranks the grouped test-set content using the
+model's decline-risk score. Each recommendation receives a reason code
+and a human-review action.
+</p>
+
+<table>
+    <thead>
+        <tr>
+            <th>Priority</th>
+            <th>Reason code</th>
+            <th>Observed condition</th>
+            <th>Recommended action</th>
+            <th>Queue count</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+        <tr>
+            <td>1</td>
+            <td>LOW_DATA_REVIEW</td>
+            <td>Insufficient measured impressions for the review rule</td>
+            <td class="action">VERIFY_DATA</td>
+            <td>16,162</td>
+        </tr>
+
+        <tr>
+            <td>2</td>
+            <td>VISIBLE_LOW_ENGAGEMENT</td>
+            <td>Visible content with low measured engagement</td>
+            <td class="action">REVIEW_ENGAGEMENT</td>
+            <td>9,631</td>
+        </tr>
+
+        <tr>
+            <td>3</td>
+            <td>PROTECT_EXISTING_VISIBILITY</td>
+            <td>Content has measurable visibility</td>
+            <td class="action">REVIEW_PAGE_ONE</td>
+            <td>9,078</td>
+        </tr>
+
+        <tr>
+            <td>4</td>
+            <td>LOW_VISIBILITY_REFRESH</td>
+            <td>Low measured visibility with impressions</td>
+            <td class="action">REVIEW_CONTENT_REFRESH</td>
+            <td>4,567</td>
+        </tr>
+
+    </tbody>
+</table>
+
+<h3>Action distribution</h3>
+
+<div class="bar-chart">
+
+    <div class="bar-row">
+        <div>Low data review</div>
+        <div class="bar-track">
+            <div class="bar" style="width:100%;"></div>
+        </div>
+        <div class="bar-value">16,162</div>
+    </div>
+
+    <div class="bar-row">
+        <div>Visible low engagement</div>
+        <div class="bar-track">
+            <div class="bar" style="width:59.6%;"></div>
+        </div>
+        <div class="bar-value">9,631</div>
+    </div>
+
+    <div class="bar-row">
+        <div>Protect visibility</div>
+        <div class="bar-track">
+            <div class="bar" style="width:56.2%;"></div>
+        </div>
+        <div class="bar-value">9,078</div>
+    </div>
+
+    <div class="bar-row">
+        <div>Low visibility refresh</div>
+        <div class="bar-track">
+            <div class="bar" style="width:28.3%;"></div>
+        </div>
+        <div class="bar-value">4,567</div>
+    </div>
+
+</div>
+
+<h3>Human-review safeguards</h3>
+
+<ul>
+    <li>Recommendations are ranked using the model score.</li>
+    <li>Reason codes provide a review context.</li>
+    <li>Automatic publishing is not permitted.</li>
+    <li>Deletion and redirects are not automatically recommended.</li>
+    <li>Causal refresh claims are not made.</li>
+    <li>Human SEO/content review remains required.</li>
+</ul>
+
+<p>
+The full ranked recommendation artifact is generated by the capstone
+notebook and can be reproduced from the repository.
+</p>
+
+</section>
+
+
+<!-- 8. REPRODUCIBILITY -->
+<section id="reproducibility">
+
+<h2>8. Reproducibility</h2>
+
+<p>
+The analysis is designed to be reproducible from the notebook and
+repository. The notebook contains the data queries, feature construction,
+validation design, leakage checks, model training, evaluation, action
+queue generation, and paper-ready artifact generation.
+</p>
+
+<h3>Repository</h3>
+
+<p>
+<a href="https://github.com/CipherSunaina02/Flyrank-ml-internship"
+target="_blank">
+View the FlyRank ML Internship repository
+</a>
+</p>
+
+<h3>Capstone notebook</h3>
+
+<p>
+<a href="https://github.com/CipherSunaina02/Flyrank-ml-internship/blob/main/work/notebooks/capstone.ipynb"
+target="_blank">
+View the capstone notebook
+</a>
+</p>
+
+<h3>Generated paper artifacts</h3>
+
+<ul>
+    <li>Model-vs-baseline results table</li>
+    <li>Model-vs-baseline chart</li>
+    <li>Reason-code summary</li>
+    <li>Reason-code distribution chart</li>
+    <li>Ranked top-20 recommendation artifact</li>
+</ul>
+
+<div class="success">
+    The notebook is intended to regenerate the analysis and paper artifacts
+    rather than requiring private raw data to be published.
+</div>
+
+</section>
+
+
+<!-- 9. ACKNOWLEDGMENTS -->
+<section id="acknowledgments">
+
+<h2>9. Acknowledgments &amp; Data Credit</h2>
+
+<p>
+This project was completed as part of the FlyRank ML Internship and uses
+the internship search-performance warehouse provided for the program.
+</p>
+
+<div class="highlight">
+    <strong>Built on the FlyRank ML Internship dataset.</strong>
+</div>
+
+<p>
+Data source:
+<a href="https://flyrank.ai" target="_blank">
+FlyRank AI
+</a>
+</p>
+
+<p>
+The analysis follows the public-safety requirements of the internship:
+no client names, domains, private queries, credentials, raw exports, or
+unsupported causal claims are included in this public paper.
+</p>
+
+</section>
+
+
+<!-- FINAL SUMMARY -->
+<section>
+
+<h2>Final Takeaway</h2>
+
+<p>
+The capstone demonstrates a complete machine-learning workflow from
+question framing and warehouse data preparation through leakage-aware
+validation and ranked content recommendations.
+</p>
+
+<p>
+The most important measured result is that the client-grouped Logistic
+Regression model achieved <strong>0.8782</strong> accuracy compared with
+<strong>0.8794</strong> for the majority-class baseline.
+</p>
+
+<p>
+Rather than overstating this result, the project treats the model as a
+<strong>directional decision-support experiment</strong> that can help
+organize human content review. The workflow also demonstrates why grouped
+validation and strict future-information exclusion matter when evaluating
+models on repeated client-level data.
+</p>
+
+</section>
+
+
+<footer>
+    Google Search Ranking &amp; Discoverability Capstone · Machine Learning Track<br>
+    Built on the FlyRank ML Internship dataset
+</footer>
+
+</div>
+
+</body>
+</html>
